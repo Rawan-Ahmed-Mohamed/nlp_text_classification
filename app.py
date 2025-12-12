@@ -9,12 +9,11 @@ import os
 # Load pre-trained models and tokenizer (they're in root directory)
 print("Loading models...")
 try:
-    # Models are in root directory, not in 'models/' folder
-    loaded_lr = joblib.load('logreg_tfidf.pkl')
-    loaded_svm = joblib.load('svm_tfidf.pkl')
-    loaded_lstm = load_model('lstm_model.keras', compile=False)
-    tokenizer = joblib.load('tokenizer.pkl')
-    print("All models loaded successfully!")
+    loaded_lr = joblib.load('models/logreg_tfidf.pkl')
+    loaded_svm = joblib.load('models/svm_tfidf.pkl')
+    loaded_lstm = load_model('models/lstm_model.keras', compile=False)
+    tokenizer = joblib.load('models/tokenizer.pkl')
+    print("All models loaded successfully from /models folder!")
     
     # Verify models work
     test_text = "space mission"
